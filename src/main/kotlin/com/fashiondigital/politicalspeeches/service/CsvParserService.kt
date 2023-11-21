@@ -45,6 +45,7 @@ class CsvParserService(@Autowired val restTemplate: RestTemplate) : ICsvParserSe
         return speakerMap
     }
 
+    //TODO: assumed there isn't any duplication on csv files.
     private fun parseCSV(url: String, speakerMap: MutableMap<String, SpeakerStats>) {
         val csvFormat = CSVFormat.DEFAULT.builder().setHeader()
                 .setSkipHeaderRecord(true)
